@@ -24,4 +24,55 @@ $(document).ready(function(){
         arrows: false,
         dots: true,
     });
+
+    $('.sert__slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
+    $('.create__slider').slick({
+        infinite: true,
+        slidesToShow: 2.5,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        // centerMode: true,
+        // variableWidth: true,
+    });
+    $('.process__slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
+    $('.sertificate__slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
   });
+
+  $(function() {
+	
+	$(".accordeon__title").on("click", function(e) {
+
+		e.preventDefault();
+		var $this = $(this);
+
+		if (!$this.hasClass("accordeon-active")) {
+			$(".accordeon__content").slideUp(400);
+			$(".accordeon__title").removeClass("accordeon-active");
+			$('.accordeon__arrow').removeClass('accordeon__rotate');
+		}
+
+		$this.toggleClass("accordeon-active");
+		$this.next().slideToggle();
+		$('.accordeon__arrow',this).toggleClass('accordeon__rotate');
+	});
+	
+});
